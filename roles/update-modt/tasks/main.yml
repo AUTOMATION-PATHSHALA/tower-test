@@ -4,13 +4,13 @@
 - name: Update motd for servera
   shell: echo "Welcome to HAProxy server 123" >> /etc/motd
   become: true
-  when: "inventory_hostname like 'servera'"
+  when: "inventory_hostname in 'servera'"
 
 
 - name: Update motd for serverb
   shell: echo "Welcome to Apache server 123" >> /etc/motd
   become: true
-  when: "inventory_hostname like 'serverb'"
+  when: "inventory_hostname in 'serverb'"
 
   # - name: Get Host name
   #   shell: '{% if inventory_hostname == "servera" %}echo "Welcome to HAProxy server tested by praveen" >> /etc/motd{% elif inventory_hostname == "serverb" %}echo "Welcome to Apache server tested by ramesh" >> /etc/motd {%endif%}' 
