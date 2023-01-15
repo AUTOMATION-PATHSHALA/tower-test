@@ -13,6 +13,6 @@
 #   when: inventory_hostname is 'serverb'
 
   - name: Get Host name
-    shell: '{% if inventory_hostname == "servera" %}echo "Welcome to HAProxy server tested by praveen" >> /etc/modt{% elif inventory_hostname == "serverb" %}echo "Welcome to Apache server tested by ramesh" >> /etc/modt {%endif%}' 
+    shell: '{% if inventory_hostname == "servera" %}echo "Welcome to HAProxy server tested by praveen" >> /etc/motd{% elif inventory_hostname == "serverb" %}echo "Welcome to Apache server tested by ramesh" >> /etc/motd {%endif%}' 
 
 
