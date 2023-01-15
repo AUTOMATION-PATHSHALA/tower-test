@@ -1,5 +1,0 @@
----
-# tasks file for get-hostname
-
-- name: Get Host name
-  shell: hostname

@@ -1,0 +1,18 @@
+---
+# tasks file for get-hostname
+
+# - name: Get Host name
+#   shell: echo "Welcome to HAProxy server" >> /etc/modt
+#   become: true
+#   when: inventory_hostname is 'servera'
+
+
+# - name: Get Host name
+#   shell: echo "Welcome to Apache server" >> /etc/modt
+#   become: true
+#   when: inventory_hostname is 'serverb'
+
+  - name: Get Host name
+    shell: '{% if inventory_hostname == "servera" %}echo "Welcome to HAProxy server" >> /etc/modt{% elif inventory_hostname == "serverb" %}echo "Welcome to Apache server" >> /etc/modt {%endif%}' 
+
+
